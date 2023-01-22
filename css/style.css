@@ -1,0 +1,263 @@
+@charset "utf-8";
+/* Font import ediyoruz */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Bu asagi tüm elementlerin sag-sol, yukari-asagi bosluklarini yok eder elementler yukari ve saga sola yapisir. */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /*yukardaki import ettigimiz Font*/
+
+    background-image: url("../image/bg.jpg");
+
+
+}
+
+
+.Container {
+    width: 80%;
+    margin: auto;
+    /* Container classini ekranaa ortalar*/
+}
+
+/*! header start */
+header {
+    height: 100px;
+    /*header yüksekligi 100px yap */
+
+    border-bottom: 2px solid rgb(255, 255, 255, 0.3);
+    /* Burda Logo ve menu altindaki cizgi olusturuluyor */
+}
+
+header nav {
+
+    display: flex;
+    /* NAV icindeki etiketleri(logo ve menu) yan yana siralar*/
+
+    justify-content: space-between;
+    /* NAV icindeki etiketleri(logo ve menu) yan yana siralar*/
+
+    align-items: center;
+
+    height: 100%;
+
+}
+
+header nav .logo a {
+
+    color: white;
+    text-decoration: none;
+    /* Yaziyinin altindaki cizgiyi kaldir*/
+
+    font-weight: 700;
+    /* Yaziyi kalinlastir*/
+
+    font-size: 30px;
+    /* Yaziyi büyült*/
+
+}
+
+nav ul {
+
+    list-style: none;
+    /* list-style-type: none; */
+    /* Liste basindaki noktalari kaldir*/
+
+    display: flex;
+    /* NAV ul icindeki etiketleri(logo ve menu) yan yana siralar*/
+
+    column-gap: 30px;
+    /* List elemanlarinin aralarina 30px bosluk koy */
+}
+
+nav ul li a {
+    font-weight: 500;
+    /* Yaziyi kalinlatis*/
+
+    font-size: 20px;
+    /* Yaziyi büyült*/
+
+    color: white;
+    text-decoration: none;
+    /* List icindeki a yazilarinin altarindaki cizgileri kaldir */
+
+    transition: color .40s ease;
+    /* a etiketine gecis effekti vermek icin */
+}
+
+nav ul li a:hover {
+    color: rgb(128, 180, 232);
+
+}
+
+nav .menu {
+    display: flex;
+    /*menu icindeki ul ve a elamanlari yan yana getir  */
+
+    align-items: center;
+    /*menu icindeki ul ve a elamanlari ortaliyoruz */
+
+    column-gap: 48px;
+    /* menunun childlari(ul ve a  arasina 48px bosluk koy */
+}
+
+nav .menu .menu-button {
+    font-weight: 500;
+    /* Yaziyi kalinlastiri*/
+
+    font-size: 20px;
+    /* Yaziyi büyült*/
+
+    color: white;
+    text-decoration: none;
+    background-color: #15d8ec;
+    opacity: 0.5;
+    padding: 10px 20px;
+    border-radius: 56px;
+
+    transition: all .40s ease;
+    /* Button etiketine gecis effekti vermek icin */
+}
+
+nav .menu .menu-button:hover {
+    background-color: #169fd1;
+    color: 15719a;
+
+
+}
+
+/*! header end */
+
+
+
+/*! Section start */
+.content {
+    color: white;
+    height: calc(100vh-100px);
+
+    /* conten icerigin 60px asagi indir */
+    padding-top: 150px;
+
+}
+
+.content h1 {
+    /* content icindeki h1 icerigindeki yaziyi 60px ve Center yap */
+    font-size: 60px;
+    text-align: center;
+
+}
+
+.content p {
+    /* content icindeki p icerigindeki yaziyi 24px ve Center yap */
+    font-size: 24px;
+    text-align: center;
+    margin-top: 32px;
+}
+
+.content .links {
+    /* bu kapsayicinin icindeki a lari yan yana getir */
+    display: flex;
+
+    /* bu kapsayicinin icindeki a lari center yap */
+    justify-content: center;
+
+    /*Yukardan 48px bosluk birak */
+    margin-top: 48px;
+
+    /*Bu a Larin arasina 16px boxluk koy*/
+    column-gap: 16px;
+
+}
+
+.content .links a {
+
+    /* Button haline getirme */
+    background-color: white;
+    padding: 15px;
+    width: 280px;
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 56px;
+    transition: all .25s ease-in;
+
+
+}
+
+.content .links a:hover {
+
+    /* Button haline getirme */
+    background-color: #00b4d8;
+    color: white;
+
+
+}
+
+/*! Section end*/
+
+
+/* Mobil cihazlarda nasil görünecek burda bu ayarlari yapiyoruz. */
+/*! responsive start */
+@media(max-width:780px) {
+    .Container {
+        width: 100%;
+    }
+
+    header nav {
+
+        display: flex;
+        /* NAV icindeki etiketleri(logo ve menu) yan yana siralar*/
+
+        justify-content: space-evenly;
+        /* NAV icindeki etiketleri(logo ve menu) yan yana siralar*/
+
+    }
+
+
+    /* Örnegin Mobil cihazda görünmesini istemedigimiz kismi yok edebiliriz. */
+    .menu .menu-button {
+        display: none;
+    }
+
+    .content {
+
+        padding-top: 50px;
+
+    }
+
+    .content h1 {
+
+        font-size: 36px;
+
+    }
+
+    .content p {
+
+        font-size: 16px;
+
+    }
+
+    .conten links a {
+
+        padding: 16px;
+    }
+
+    .content .links {
+        /* Burdadad yan yana olan Buttonlari alt alta geciriyoruz */
+        flex-direction: column;
+
+        /* Buttonlari centere al */
+        align-items: center;
+
+        /* aralarini 15px ac */
+        row-gap: 15px;
+
+    }
+}
+
+/*! responsive end */
